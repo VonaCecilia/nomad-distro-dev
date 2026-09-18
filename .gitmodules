@@ -13,6 +13,6 @@
 [submodule "packages/nomad-parser-plugins-simulation"]
 	path = packages/nomad-parser-plugins-simulation
 	url = https://github.com/FAIRmat-NFDI/nomad-parser-plugins-simulation.git
-[submodule "packages/nomad-plugin-tests"]
-	path = packages/nomad-plugin-tests
-	url = https://github.com/FAIRmat-NFDI/nomad-plugin-tests
+[submodule "packages/nomad-simulations"]
+	path = packages/nomad-simulations
+	url = git@github.com:FAIRmat-NFDI/nomad-simulations.git
