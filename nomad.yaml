@@ -1,0 +1,55 @@
+keycloak:
+  realm_name: "fairdi_nomad_test"
+# Plugin entry-point include/exclude reference:
+#   https://nomad-lab.eu/prod/v1/docs/howto/plugins/plugins/  ("Controlling loading of plugin entry points")
+#   https://nomad-lab.eu/prod/v1/docs/reference/config/       (full plugins.entry_points config)
+#
+# GRANULARITY: exclusion is per ENTRY POINT, matched by EXACT string
+# (EntryPoints(Options) -> Options.filtered_keys, exact `key not in exclude`).
+# There is NO glob/prefix wildcard for entry_points, so a whole plugin CANNOT be
+# turned off in one line — every entry point must be listed. The only wildcard is
+# the literal "*", which excludes ALL plugins. Hence the 33 lines below cover the
+# complete set of nomad-parser-plugins-simulation entry points.
+#
+# NOTE: a user exclude list REPLACES the default rather than merging — documented at
+# https://nomad-lab.eu/prod/v1/docs/reference/config/ ("the entire include list was
+# replaced"). So NOMAD's default porositynormalizer exclude is re-listed below on purpose.
+plugins:
+  entry_points:
+    exclude:
+      # keep NOMAD's default exclude (config merge overwrites the list, so re-list it)
+      - nomad_porous_materials.normalizers:porositynormalizer
+      # --- deactivate nomad-parser-plugins-simulation (all 33 entry points) ---
+      - nomad_simulation_parsers.parsers:abinit_parser
+      - nomad_simulation_parsers.schema_packages:abinit_schema_package
+      - nomad_simulation_parsers.parsers:ams_parser
+      - nomad_simulation_parsers.schema_packages:ams_schema_package
+      - nomad_simulation_parsers.parsers:crystal_parser
+      - nomad_simulation_parsers.schema_packages:crystal_schema_package
+      - nomad_simulation_parsers.parsers:exciting_parser
+      - nomad_simulation_parsers.schema_packages:exciting_schema_package
+      - nomad_simulation_parsers.parsers:fhiaims_parser
+      - nomad_simulation_parsers.schema_packages:fhiaims_schema_package
+      - nomad_simulation_parsers.parsers:gpaw_parser
+      - nomad_simulation_parsers.schema_packages:gpaw_schema_package
+      - nomad_simulation_parsers.parsers:gromacs_parser
+      - nomad_simulation_parsers.schema_packages:gromacs_schema_package
+      - nomad_simulation_parsers.parsers:h5md_parser
+      - nomad_simulation_parsers.schema_packages:h5md_schema_package
+      - nomad_simulation_parsers.parsers:lammps_parser
+      - nomad_simulation_parsers.parsers:lobster_parser
+      - nomad_simulation_parsers.schema_packages:lobster_schema_package
+      - nomad_simulation_parsers.parsers:octopus_parser
+      - nomad_simulation_parsers.schema_packages:octopus_schema_package
+      - nomad_simulation_parsers.parsers:orca_parser
+      - nomad_simulation_parsers.schema_packages:orca_schema_package
+      - nomad_simulation_parsers.parsers:phonopy_parser
+      - nomad_simulation_parsers.schema_packages:phonopy_schema_package
+      - nomad_simulation_parsers.parsers:quantumespresso_parser
+      - nomad_simulation_parsers.schema_packages:quantumespresso_schema_package
+      - nomad_simulation_parsers.parsers:vasp_parser
+      - nomad_simulation_parsers.schema_packages:vasp_schema_package
+      - nomad_simulation_parsers.parsers:wannier90_parser
+      - nomad_simulation_parsers.schema_packages:wannier90_schema_package
+      - nomad_simulation_parsers.parsers:yambo_parser
+      - nomad_simulation_parsers.schema_packages:yambo_schema_package
