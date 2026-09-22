@@ -36,6 +36,9 @@ extra-index-url = [
 required-version = ">=0.5.14"
 constraint-dependencies = ["flatdict>=4.1.0"]
 
+override-dependencies = [
+  "nomad-simulations",
+]
 [dependency-groups]
 dev = ["nomad-lab[infrastructure, dev]>=1.3.4", "poethepoet>=0.29.0"]
 
