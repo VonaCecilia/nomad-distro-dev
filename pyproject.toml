@@ -27,6 +27,7 @@ nomad-measurements = { workspace = true }
 nomad-docs = { workspace = true }
 nomad-simulation-parsers = { workspace = true }
 nomad-simulations = { workspace = true}
+nomad-file-parser = { git = "https://github.com/FAIRmat-NFDI/nomad-file-parser.git", rev = "74530905d1a74be5feaad53d0f575e9c868481e5" }
 
 [tool.uv]
 extra-index-url = [
