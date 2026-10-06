@@ -10,7 +10,6 @@ dependencies = [
     "nomad-gui>=2.0.0b2",
     "nomad-lab[infrastructure]>=1.3.10",
     "nomad-measurements",
-    "nomad-simulation-parsers",
     "nomad-simulations"
 ]
 
@@ -26,7 +25,6 @@ nomad-external-eln-integrations = { git = "https://github.com/FAIRmat-NFDI/nomad
 nomad-measurements = { workspace = true }
 nomad-parser-plugins-electronic = { workspace = true }
 nomad-docs = { workspace = true }
-nomad-simulation-parsers = { workspace = true }
 nomad-simulations = { workspace = true}
 nomad-file-parser = { git = "https://github.com/FAIRmat-NFDI/nomad-file-parser.git", rev = "74530905d1a74be5feaad53d0f575e9c868481e5" }
 
